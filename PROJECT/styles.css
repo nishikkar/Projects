@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Header */
+  .main-header {
+    background: #007BFF;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    font-weight: bold;
+  }
+  
+  .auth-links {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    background: white;
+    color: #007BFF;
+    border: 2px solid white;
+  }
+  
+  .btn-secondary {
+    background: #0056b3;
+    color: white;
+    border: 2px solid #0056b3;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background: #f0f8ff;
+  }
+  
+  .hero-content {
+    max-width: 50%;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    color: #007BFF;
+  }
+  
+  .hero-image img {
+    border-radius: 10px;
+  }
+  
+  /* Info Sections */
+  .info-section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .services-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .service-card {
+    background: #e8f4fc;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+  }
+  
+  .products-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  /* Footer */
+  .main-footer {
+    background: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .social-links li a {
+    color: white;
+  }
+  

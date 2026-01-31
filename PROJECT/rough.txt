@@ -1,0 +1,55 @@
+ form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  CREATE TABLE items (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name TEXT NOT NULL
+  )
+  CREATE TABLE order_description (
+    id INTEGER PRIMARY KEY NOT NULL,
+    item_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
+    qty_type TEXT NOT NULL,
+    FOREIGN KEY(item_id) REFERENCES items(id)
+  )
+  CREATE TABLE orders (  
+    user_id INTEGER NOT NULL,
+    order_id INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    date TEXT NOT NULL,
+    order_status TEXT NOT NULL,
+    delivery_address TEXT,
+    delivery_date TEXT,
+    phone_no TEXT, 
+    total_bill INTEGER DEFAULT NULL,
+    FOREIGN KEY(user_id) REFERENCES users(id)
+  );
+
+INSERT INTO items (name) VALUES (A),(B),(C),(D),(E);
+INSERT INTO 
+items 
+(name) VALUES 
+("A"),
+("B"),
+("C"),
+("D"),
+("E");
+
+CREATE TABLE order_description (
+    id INTEGER NOT NULL,
+    item_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
+    qty_type TEXT NOT NULL, price INTEGER DEFAULT NULL, item_name TEXT NOT NULL,
+    FOREIGN KEY(item_id) REFERENCES items(id)
+  );
+
+  CREATE TABLE owners (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL
+);

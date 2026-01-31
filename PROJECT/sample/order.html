@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Products</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1>Order Your Products</h1>
+    <input 
+    type="text" 
+    id="search-bar" 
+    placeholder="Search products..." 
+    oninput="filterProducts()">
+
+  </header>
+
+  <main>
+    <section class="order-section">
+      <form class="order-form">
+        <div class="product-container" id="product-container">
+          <!-- Example Product Cards -->
+          <div class="product-card" data-name="Product 1">
+            <img src="product1.jpg" alt="Product 1">
+              <h3>Product 1</h3>
+              <label for="product1-quantity">Quantity:</label>
+              <input type="number" id="product1-quantity" name="product1-quantity" min="0" placeholder="Enter quantity">
+              <select name="product1-unit" id="product1-unit">
+                <option value="kg">Kg</option>
+                <option value="pieces">Pieces</option>
+              </select>
+          </div>
+
+          <div class="product-card" data-name="Product 2">
+            <img src="product2.jpg" alt="Product 2">
+              <h3>Product 2</h3>
+              <label for="product2-quantity">Quantity:</label>
+              <input type="number" id="product2-quantity" name="product2-quantity" min="0" placeholder="Enter quantity">
+              <select name="product2-unit" id="product2-unit">
+                <option value="kg">Kg</option>
+                <option value="pieces">Pieces</option>
+              </select>
+          </div>
+
+          <div class="product-card" data-name="Product 3">
+            <img src="product3.jpg" alt="Product 3">
+              <h3>Product 3</h3>
+              <label for="product3-quantity">Quantity:</label>
+              <input type="number" id="product3-quantity" name="product3-quantity" min="0" placeholder="Enter quantity">
+              <select name="product3-unit" id="product3-unit">
+                <option value="kg">Kg</option>
+                <option value="pieces">Pieces</option>
+              </select>
+          </div>
+        </div>
+    
+
+      
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+        <button type="submit" class="btn-primary">Place Order</button>
+    </form>
+  </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>© 2024 [MSME Name]. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

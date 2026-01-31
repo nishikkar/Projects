@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0078d7;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .pending-orders, .pending-deliveries {
+            margin-top: 20px;
+        }
+
+        .order {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .order h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .order-item input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100px;
+        }
+
+        .order-total {
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .order-actions {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .order-actions button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            color: white;
+        }
+
+        .order-actions .accept {
+            background-color: #0078d7;
+        }
+
+        .order-actions .accept:hover {
+            background-color: #005bb5;
+        }
+
+        .order-actions .reject {
+            background-color: #d9534f;
+        }
+
+        .order-actions .reject:hover {
+            background-color: #b52a27;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Owner Dashboard</h1>
+        </div>
+
+        <!-- Grid Container -->
+        <div class="grid-container">
+            <!-- Pending Orders Card -->
+            <div class="card">
+                <h3>Pending Orders</h3>
+                <p>Manage and process pending customer orders by setting prices for each item.</p>
+                <div class="pending-orders">
+                    <!-- Order 1 -->
+                    <form action="/#" method="POST">
+                        <div class="order">
+                            <h4>Order #12345</h4>
+                            <p>Customer: John Doe</p>
+                             <p>Customer: John Doe</p>
+                            <div class="order-item">
+                                <span>Item: Apple</span>
+                                <span>Amount: 2</span>
+                                <input type="text" class="item-price" data-amount="2" placeholder="Price">
+                            </div>
+                            <div class="order-item">
+                                <span>Item: Orange</span>
+                                <span>Amount: 3</span>
+                                <input type="text" class="item-price" data-amount="3" placeholder="Price">
+                            </div>
+                            <div class="order-total">Total Price: $<span class="total-price">0.00</span></div>
+                            <div class="order-actions">
+                                <button type="submit" class="accept">Accept</button>
+                                <button type="submit" class="reject">Reject</button>
+                            </div>
+                            <input type="hidden" name="action" id="action">
+                        </div>
+                    </form>
+                    <form action="/owner_dashboard" method="POST">
+                        <div class="order">
+                            <h4>Order #12345</h4>
+                            <p>Customer: John Doe</p>
+                            <div class="order-item">
+                                <span>Item: Apple</span>
+                                <span>Amount: 2</span>
+                                <input type="text" class="item-price" data-amount="2" placeholder="Price">
+                            </div>
+                            <div class="order-item">
+                                <span>Item: Orange</span>
+                                <span>Amount: 3</span>
+                                <input type="text" class="item-price" data-amount="3" placeholder="Price">
+                            </div>
+                            <div class="order-total">Total Price: $<span class="total-price">0.00</span></div>
+                            <div class="order-actions">
+                                <button type="submit" class="accept">Accept</button>
+                                <button type="submit" class="reject">Reject</button>
+                            </div>
+                            <input type="hidden" name="action" id="action">
+                        </div>
+                    </form>
+                    <form action="/#" method="POST">
+                        <div class="order">
+                            <h4>Order #12345</h4>
+                            <p>Customer: John Doe</p>
+                            <div class="order-item"> 
+                                <span>Item: Apple</span>
+                                <span>Amount: 2</span>
+                                <input type="text" class="item-price" data-amount="2" placeholder="Price">
+                            </div>
+                            <div class="order-item">
+                                <span>Item: Orange</span>
+                                <span>Amount: 3</span>
+                                <input type="text" class="item-price" data-amount="3" placeholder="Price">
+                            </div>
+                            <div class="order-total">Total Price: $<span class="total-price">0.00</span></div>
+                            <div class="order-actions">
+                                <button type="submit" class="accept">Accept</button>
+                                <button type="submit" class="reject">Reject</button>
+                            </div>
+                            <input type="hidden" name="action" id="action">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+
+            <!-- Pending Deliveries Card -->
+            <div class="card">
+                <h3>Pending Deliveries</h3>
+                <p>Track and update delivery status for pending orders.</p>
+                <div class="pending-deliveries">
+                    <div class="order">
+                        <h4>Delivery #D001</h4>
+                        <p>Customer: Alice Johnson</p>
+                        <p>Status: Out for delivery</p>
+                    </div>
+                    <div class="order">
+                        <h4>Delivery #D002</h4>
+                        <p>Customer: Mark Brown</p>
+                        <p>Status: Awaiting pickup</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Pending Payments</h3>
+                <p>Manage and process pending customer orders by setting prices for each item.</p>
+                <div class="pending-orders">
+                    <!-- Order 1 -->
+                    <form action="/#" method="POST">
+                        <div class="order">
+                            <h4>Order #12345</h4>
+                            <p>Customer: John Doe</p>
+                             <p>Customer: John Doe</p>
+                            <div class="order-item">
+                                <span>Item: Apple</span>
+                                <span>Amount: 2</span>
+                                <input type="text" class="item-price" data-amount="2" placeholder="Price">
+                            </div>
+                            <div class="order-item">
+                                <span>Item: Orange</span>
+                                <span>Amount: 3</span>
+                                <input type="text" class="item-price" data-amount="3" placeholder="Price">
+                            </div>
+                            <div class="order-total">Total Price: $<span class="total-price">0.00</span></div>
+                            <div class="order-actions">
+                                <button type="submit" class="accept">Accept</button>
+                                <button type="submit" class="reject">Reject</button>
+                            </div>
+                            <input type="hidden" name="action" id="action">
+                        </div>
+                    </form>
+                    <form action="/owner_dashboard" method="POST">
+                        <div class="order">
+                            <h4>Order #12345</h4>
+                            <p>Customer: John Doe</p>
+                            <div class="order-item">
+                                <span>Item: Apple</span>
+                                <span>Amount: 2</span>
+                                <input type="text" class="item-price" data-amount="2" placeholder="Price">
+                            </div>
+                            <div class="order-item">
+                                <span>Item: Orange</span>
+                                <span>Amount: 3</span>
+                                <input type="text" class="item-price" data-amount="3" placeholder="Price">
+                            </div>
+                            <div class="order-total">Total Price: $<span class="total-price">0.00</span></div>
+                            <div class="order-actions">
+                                <button type="submit" class="accept">Accept</button>
+                                <button type="submit" class="reject">Reject</button>
+                            </div>
+                            <input type="hidden" name="action" id="action">
+                            <input type="hidden" name="total-bill" id="total-bill">
+                            <input type="hidden" name="order_id" value="{{ order['order_id']}}">
+                        </div>
+                    </form>
+                    <form action="/#" method="POST">
+                        <div class="order">
+                            <h4>Order #12345</h4>
+                            <p>Customer: John Doe</p>
+                            <div class="order-item"> 
+                                <span>Item: Apple</span>
+                                <span>Amount: 2</span>
+                                <input type="text" class="item-price" data-amount="2" placeholder="Price">
+                            </div>
+                            <div class="order-item">
+                                <span>Item: Orange</span>
+                                <span>Amount: 3</span>
+                                <input type="text" class="item-price" data-amount="3" placeholder="Price">
+                            </div>
+                            <div class="order-total">Total Price: $<span class="total-price">0.00</span></div>
+                            <div class="order-actions">
+                                <button type="submit" class="accept">Accept</button>
+                                <button type="submit" class="reject">Reject</button>
+                            </div>
+                            <input type="hidden" name="action" id="action">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', () => {
+    // Select all forms on the page
+    const forms = document.querySelectorAll('form');
+    
+    forms.forEach(form => {
+        // Attach event listener for each form's submit buttons
+        const acceptButton = form.querySelector('.accept');
+        const rejectButton = form.querySelector('.reject');
+        const actionInput = form.querySelector('input[name="action"]');
+        const totalBillInput = form.querySelector('input[name="total-bill"]');
+        const totalPriceSpan = form.querySelector('.total-price');
+        
+        // Handle accept button
+        acceptButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent form from submitting immediately
+            actionInput.value = 'accept';
+            totalBillInput.value = totalPriceSpan.textContent.trim();
+            form.submit(); // Manually submit the form after updating
+        });
+
+        // Handle reject button
+        rejectButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            actionInput.value = 'reject';
+            totalBillInput.value = totalPriceSpan.textContent.trim();
+            form.submit();
+        });
+
+        // Auto-calculate total price when prices are entered
+        const itemPriceInputs = form.querySelectorAll('.item-price');
+        itemPriceInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                let total = 0;
+                itemPriceInputs.forEach(itemInput => {
+                    const amount = parseFloat(itemInput.dataset.amount) || 0;
+                    const price = parseFloat(itemInput.value) || 0;
+                    total += amount * price;
+                });
+                totalPriceSpan.textContent = total.toFixed(2);
+            });
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
